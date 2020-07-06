@@ -13,7 +13,7 @@ from bpy.types import (Panel,
                        PropertyGroup,
                        )
 
-import .CPA_functions
+from .CPA_functions import *
 
 
 
@@ -49,7 +49,7 @@ class setupProperties(Operator):
 
         propname = cpa.property_name
 
-        CPA_functions.setupProperty(obj, propname)
+        setupProperty(obj, propname)
 
         return {'FINISHED'}
     
@@ -67,7 +67,7 @@ class removeProperties(Operator):
 
         propname = cpa.property_name
 
-        CPA_functions.removeProperty(obj, propname)
+        removeProperty(obj, propname)
 
         return {'FINISHED'}
     
@@ -91,7 +91,7 @@ class setupPropertiesForMaterial(Operator):
             raise Exception("No Materials found with name " + material)
         
         for obj in objects:    
-            CPA_functions.setupProperty(obj, propname)
+            setupProperty(obj, propname)
 
         return {'FINISHED'}
     
@@ -115,7 +115,7 @@ class removePropertiesForMaterial(Operator):
             raise Exception("No Materials found with name " + material)
         
         for obj in objects:    
-            CPA_functions.removeProperty(obj, propname)
+            removeProperty(obj, propname)
 
         return {'FINISHED'}
 
