@@ -13,15 +13,9 @@ from bpy.types import (Panel,
                        PropertyGroup,
                        )
 
-dir = os.path.dirname(bpy.data.filepath)
-if not dir in sys.path:
-    sys.path.append(dir)
-    #print(sys.path)
-
 import CPA_functions
 
-import importlib
-importlib.reload(CPA_functions)
+
 
 
 class nbProperties(PropertyGroup):
