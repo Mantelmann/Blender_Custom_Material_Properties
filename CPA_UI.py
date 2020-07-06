@@ -40,6 +40,7 @@ class setupProperties(Operator):
     bl_description = "Prepare Custom Property for Material use"
     bl_info = "Create UV-map, Driver, Modifier for Custom Property"
     bl_idname = "wm.setup_properties"
+    bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
         scene = context.scene
@@ -58,7 +59,8 @@ class removeProperties(Operator):
     bl_description = "Remove Custom Property"
     bl_info = "Remove UV-map, Driver, Modifier for Custom Property"
     bl_idname = "wm.remove_properties"
-
+    bl_options = {'REGISTER', 'UNDO'}
+    
     def execute(self, context):
         scene = context.scene
         cpa = scene.cpa
@@ -76,6 +78,7 @@ class setupPropertiesForMaterial(Operator):
     bl_description = "Prepare Custom Property for every Object with Material"
     bl_info = "Create UV-map, Driver, Modifier for Custom Property for every object with given Material"
     bl_idname = "wm.setup_properties_material"
+    bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
         scene = context.scene
@@ -100,6 +103,7 @@ class removePropertiesForMaterial(Operator):
     bl_description = "Remove Custom Property for every Object with Material"
     bl_info = "Remove UV-map, Driver, Modifier for Custom Property for every object with given Material"
     bl_idname = "wm.remove_properties_material"
+    bl_options = {'REGISTER', 'UNDO'}
 
     def execute(self, context):
         scene = context.scene
