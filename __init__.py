@@ -6,7 +6,7 @@ bl_info = {
     "blender": (2, 83, 0),
     "location": "Properties > Object",
     "warning": "Please don't expect too much of me",
-    "wiki_url": "TBD",
+    "wiki_url": "https://github.com/Mantelmann/Blender_Custom_Material_Properties",
     "category": "Material"
 }
 
