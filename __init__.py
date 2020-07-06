@@ -11,4 +11,4 @@ bl_info = {
 }
 
 
-from CPA_UI.py import *
+from CPA_UI import *
