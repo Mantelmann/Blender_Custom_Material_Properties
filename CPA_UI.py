@@ -13,7 +13,7 @@ from bpy.types import (Panel,
                        PropertyGroup,
                        )
 
-import CPA_functions
+import .CPA_functions
 
 
 
