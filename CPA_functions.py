@@ -33,6 +33,7 @@ def setupProperty(obj, propname):
             #print("Property Setup: Driver found and deleted")
         else:
             #print("Property Setup: No driver found, all okay")
+            pass
         
         warpmod = obj.modifiers.new(name=name, type='UV_WARP')
         warpmod.show_expanded = False
