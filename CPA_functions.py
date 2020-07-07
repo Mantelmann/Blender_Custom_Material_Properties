@@ -16,8 +16,6 @@ def setupProperty(obj, propname):
         obj[name] = 0.0
         obj['_RNA_UI']["CPA_" + propname] = {"description":name,
                           "default": 0.0,
-                          "soft_min":0.0,
-                          "soft_max":1.0,
                           "is_overridable_library":0,
                           }
     if not uvExists:
