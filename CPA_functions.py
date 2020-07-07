@@ -30,9 +30,9 @@ def setupProperty(obj, propname):
         if driverExists:
             driver = obj.animation_data.drivers[driverIndex]
             del driver
-            print("Property Setup: Driver found and deleted")
+            #print("Property Setup: Driver found and deleted")
         else:
-            print("Property Setup: No driver found, all okay")
+            #print("Property Setup: No driver found, all okay")
         
         warpmod = obj.modifiers.new(name=name, type='UV_WARP')
         warpmod.show_expanded = False
@@ -63,21 +63,21 @@ def removeProperty(obj, propname):
     
     if propExists:
         del obj[name]
-        print(str(obj) + " deleted Prop")
+        print("CPA: " + str(obj) + " deleted Prop")
     
     if driverExists:
         driver = obj.animation_data.drivers[driverIndex]
         del driver
-        print("Property Remove: Found Driver and deleted it")
-        print(str(obj) + " deleted Driver")
+        #print("Property Remove: Found Driver and deleted it")
+        print("CPA: " + str(obj) + " deleted Driver")
     
     if driverExists and modifierExists:
         obj.modifiers[name].driver_remove('offset',0)
-        print(str(obj) + " deleted Driver in Modifier")
+        print("CPA: " + str(obj) + " deleted Driver in Modifier")
     
     if modifierExists:
         obj.modifiers.remove(obj.modifiers.get(name))
-        print(str(obj) + " deleted Modifier")
+        print("CPA: " + str(obj) + " deleted Modifier")
 
     if uvExists:
         #obj.data.uv_layers[name].active = True
@@ -85,7 +85,7 @@ def removeProperty(obj, propname):
         
         obj.data.uv_layers.remove(obj.data.uv_layers.get(name))
         
-        print(str(obj) + " deleted UV")
+        print("CPA: " + str(obj) + " deleted UV")
     
     return {'FINISHED'}
 
@@ -101,9 +101,10 @@ def checkName(obj, propname):
     try:
         if obj[name] != None:
             propExists = True
-        print("Checker: prop found")
+        #print("Checker: prop found")
     except:
-        print("Checker: prop not found")
+        #print("Checker: prop not found")
+        pass
     
     try:
         if len(obj.animation_data.drivers) == 0:
@@ -113,23 +114,26 @@ def checkName(obj, propname):
             if driver.driver.expression == name:
                 driverExists = True
                 driverIndex = num
-                print("Checker: driver found")
+                #print("Checker: driver found")
     except:
-        print("Checker: driver not found")
+        #print("Checker: driver not found")
+        pass
     
     try:
         if obj.data.uv_layers[name] != None:
             uvExists = True
-        print("Checker: uv found")
+        #print("Checker: uv found")
     except:
-        print("Checker: uv not found")
-    
+        #print("Checker: uv not found")
+        pass
+        
     try:
         if obj.modifiers[name] != None:
             modifierExists = True
-        print("Checker: modifier found")
+        #print("Checker: modifier found")
     except:
-        print("Checker: modifier not found")
+        #print("Checker: modifier not found")
+        pass
         
     return propExists, driverExists, uvExists, modifierExists, driverIndex
 
